@@ -62,8 +62,8 @@ class CheckBox extends Component {
         if (this.props.labelBefore) {
             container = (
                 <View style={this.props.containerStyle || [styles.container, styles.flexContainer]}>
-                    <View style={styles.labelContainer}>
-                        <Text numberOfLines={this.props.labelLines} style={[styles.label, this.props.labelStyle]}>{this.props.label}</Text>
+                    <View  style={styles.labelContainer}>
+                        <Text  numberOfLines={this.props.labelLines} style={[styles.label, this.props.labelStyle]}>{this.props.label}</Text>
                     </View>
                     <Image
                     style={[styles.checkbox, this.props.checkboxStyle]}
@@ -84,7 +84,7 @@ class CheckBox extends Component {
         }
 
         return (
-            <TouchableHighlight onPress={this.onChange} underlayColor={this.props.underlayColor} style={styles.flexContainer}>
+            <TouchableHighlight accessible accessibilityLabel={'checkBoxBtn' + this.props.label} testID={this.props.label} onPress={this.onChange} underlayColor={this.props.underlayColor} style={styles.flexContainer}>
                 {container}
             </TouchableHighlight>
         );
